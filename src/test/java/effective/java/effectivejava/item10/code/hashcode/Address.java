@@ -3,6 +3,8 @@ package effective.java.effectivejava.item10.code.hashcode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Objects;
+
 @Getter
 @AllArgsConstructor
 public class Address {
@@ -17,6 +19,7 @@ public class Address {
         result = 31 * result + street.hashCode();
         result = 31 * result + zipcode.hashCode();
         return result;
+        /*return Objects.hash(city, street, zipcode);*/
     }
 
     @Override
@@ -31,5 +34,10 @@ public class Address {
         return address.city.equals(city) &&
                 address.street.equals(street) &&
                 address.zipcode.equals(zipcode);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s", city, street, zipcode);
     }
 }

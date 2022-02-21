@@ -39,8 +39,8 @@ public class AddressTest {
         Address address1 = getEqualsAddress();
         Address address2 = getEqualsAddress();
 
-        log.info("address1={}", address1.hashCode());
-        log.info("address2={}", address2.hashCode());
+        log.info("address1={}, address1.toString()={}", address1.hashCode(), address1);
+        log.info("address2={}, address2.toString()={}", address2.hashCode(), address2);
         assertThat(address1.hashCode() == address2.hashCode()).isTrue();
     }
 
@@ -52,5 +52,14 @@ public class AddressTest {
         log.info("address1={}", address1.hashCode());
         log.info("address2={}", address2.hashCode());
         assertThat(address1.hashCode() == address2.hashCode()).isFalse();
+    }
+
+    @Test
+    void toStringOverrideTest() {
+        Address address1 = getEqualsAddress();
+        Address address2 = getNotEqualsAddress();
+
+        log.info("address1={}", address1);
+        log.info("address2={}", address2);
     }
 }
