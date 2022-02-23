@@ -11,7 +11,6 @@ public class CisNullTest {
     void test() {
 
         CaseInsensitiveStringNull cis = new CaseInsensitiveStringNull("null");
-        boolean equals = cis.equals(null);
-        log.info("null={}", equals);
+        log.info("null={}", cis.equals(null));
     }
 }
