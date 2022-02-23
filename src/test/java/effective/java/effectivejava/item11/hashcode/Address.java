@@ -1,9 +1,7 @@
-package effective.java.effectivejava.item10.code.hashcode;
+package effective.java.effectivejava.item11.hashcode;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.Objects;
 
 @Getter
 @AllArgsConstructor

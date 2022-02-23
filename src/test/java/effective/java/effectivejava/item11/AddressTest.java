@@ -1,8 +1,7 @@
-package effective.java.effectivejava.item10.hashcodeTest;
+package effective.java.effectivejava.item11;
 
-import effective.java.effectivejava.item10.code.hashcode.Address;
+import effective.java.effectivejava.item11.hashcode.Address;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
