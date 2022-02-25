@@ -19,7 +19,6 @@ public class ComparableTest {
         s.add("A");
         s.add("E");
         s.add("C");
-      //  Collections.addAll(s);
         s.forEach(System.out::println);
     }
 
