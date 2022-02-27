@@ -4,7 +4,6 @@ import effective.java.effectivejava.item14.comparable.PhoneNumber;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
