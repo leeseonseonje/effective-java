@@ -10,5 +10,11 @@ public class ComplexTest {
     @Test
     void test() {
         Complex complex = new Complex(1.5, 1.5);
+
+        double re = complex.realPart();
+        log.info("re={}", re);
+
+        double im = complex.imaginaryPart();
+        log.info("im={}", im);
     }
 }
