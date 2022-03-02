@@ -16,5 +16,10 @@ public class ComplexTest {
 
         double im = complex.imaginaryPart();
         log.info("im={}", im);
+
+        Complex complex1 = new Complex(2.5, 1.5);
+        Complex plus = complex.plus(complex1);
+        log.info("plus={}", plus);
+
     }
 }
