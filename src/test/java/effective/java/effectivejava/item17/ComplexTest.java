@@ -21,5 +21,8 @@ public class ComplexTest {
         Complex plus = complex.plus(complex1);
         log.info("plus={}", plus);
 
+        Complex minus = complex.minus(complex1);
+        log.info("minus={}", minus);
+
     }
 }
