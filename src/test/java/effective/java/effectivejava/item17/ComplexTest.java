@@ -24,5 +24,10 @@ public class ComplexTest {
         Complex minus = complex.minus(complex1);
         log.info("minus={}", minus);
 
+        Complex times = complex.times(complex1);
+        log.info("times={}", times);
+
+        Complex dividedBy = complex.dividedBy(complex1);
+        log.info("dividedBy={}", dividedBy);
     }
 }
