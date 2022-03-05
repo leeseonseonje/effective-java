@@ -2,7 +2,10 @@ package effective.java.effectivejava.item17;
 
 import effective.java.effectivejava.item17.code.Complex;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
 public class ComplexTest {
@@ -29,5 +32,7 @@ public class ComplexTest {
 
         Complex dividedBy = complex.dividedBy(complex1);
         log.info("dividedBy={}", dividedBy);
+
+        assertThat(complex1.equals(complex)).isFalse();
     }
 }
