@@ -13,9 +13,6 @@ public class CaseInsensitiveStringNull {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof CaseInsensitiveStringNull)) {
-            return false;
-        }
-        return true;
+        return o instanceof CaseInsensitiveStringNull;
     }
 }
