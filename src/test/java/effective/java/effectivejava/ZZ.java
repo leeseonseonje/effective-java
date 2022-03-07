@@ -69,4 +69,8 @@ public class ZZ<E> implements Set<E> {
     public void clear() {
 
     }
+
+    public void name() {
+        System.out.println("Dasdasda");
+    }
 }
