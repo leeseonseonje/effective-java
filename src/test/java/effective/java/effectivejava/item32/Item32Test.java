@@ -1,5 +1,7 @@
 package effective.java.effectivejava.item32;
 
+import effective.java.effectivejava.item32.code.VarargsTest;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,12 +11,10 @@ public class Item32Test {
 
     @Test
     void test() {
-        List<String> stringLists = List.of("A", "B", "C", "D");
-        List<Integer> intList = List.of(42);
-        Object[] objects = stringLists.toArray();
-        objects[0] = intList;
-        String s = stringLists.get(0);
+        VarargsTest varargs = new VarargsTest();
 
-        System.out.println(s);
+        List<String> list = new ArrayList<>(List.of("A", "B", "C", "D"));
+
+        Assertions.assertThatThrownBy(() -> varargs.test(list)).isInstanceOf(ClassCastException.class);
     }
 }

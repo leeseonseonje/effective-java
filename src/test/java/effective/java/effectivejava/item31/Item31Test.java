@@ -26,9 +26,9 @@ public class Item31Test {
         List<? extends Number> extendsTest = boundedWildCard.extendsTest(integers);
         List<? super Number> superTest = boundedWildCard.superTest(objects);
 
-        Assertions.assertThat(numberList.get(0)).isInstanceOfAny(Number.class);
-        Assertions.assertThat(extendsTest.get(0)).isInstanceOfAny(Integer.class);
-        Assertions.assertThat(superTest.get(0)).isInstanceOfAny(Object.class);
+        Assertions.assertThat(numberList.get(0)).isInstanceOf(Number.class);
+        Assertions.assertThat(extendsTest.get(0)).isInstanceOf(Integer.class);
+        Assertions.assertThat(superTest.get(0)).isInstanceOf(Object.class);
 
     }
 }
