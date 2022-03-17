@@ -15,11 +15,11 @@ public class Item33Test {
 
         favorites.put(String.class, "String");
         favorites.put(Integer.class, 1900);
-        favorites.put(FavoritesInstance.class, new FavoritesInstance("STRING", 2022));
+        favorites.put(FavoritesInstance.class, new FavoritesInstance("Instance", 2022));
 
         assertThat(favorites.get(String.class)).isEqualTo("String");
         assertThat(favorites.get(Integer.class)).isEqualTo(1900);
-        assertThat(favorites.get(FavoritesInstance.class).getValue()).isEqualTo("STRING");
+        assertThat(favorites.get(FavoritesInstance.class).getValue()).isEqualTo("Instance");
         assertThat(favorites.get(FavoritesInstance.class).getInteger()).isEqualTo(2022);
     }
 }
