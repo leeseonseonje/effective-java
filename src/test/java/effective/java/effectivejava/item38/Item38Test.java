@@ -30,4 +30,20 @@ public class Item38Test {
         list.add(ExtendedOperation.REMAINDER.apply(x, y));
         list.forEach(System.out::println);
     }
+
+    public void ov() {
+
+    }
+
+    public void ov(String s) {
+
+    }
+
+    public void ov(int i) {
+
+    }
+
+    public void ov(Integer i) {
+
+    }
 }
