@@ -2,5 +2,5 @@ package effective.java.effectivejava.item42.code;
 
 public abstract class ABTTT {
 
-    public abstract void test();
+    public abstract void test(Integer x, Integer y);
 }

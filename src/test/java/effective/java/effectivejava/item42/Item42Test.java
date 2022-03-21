@@ -1,5 +1,6 @@
 package effective.java.effectivejava.item42;
 
+import effective.java.effectivejava.item20.abclass.A;
 import effective.java.effectivejava.item42.code.ABTTT;
 import effective.java.effectivejava.item42.code.Operation;
 import effective.java.effectivejava.item42.code.OperationImpl;
@@ -17,6 +18,7 @@ public class Item42Test {
 
     @Test
     void test() {
+
         List<String> words = new ArrayList<>();
         words.add("123456");
         words.add("1234");
@@ -44,27 +46,43 @@ public class Item42Test {
 
     @Test
     void test3() {
-        testMethod(() -> System.out.println("interface"));
+
+        List<String> list = testMethod((a, b, c) -> System.out.println(a + ", " + b + ", " + c));
+
+        TTT ttt = (l1, l2, l3) -> System.out.println(l1 + " > " + l2 + " > " + l3);
+        ttt.test(list.get(0), list.get(1), list.get(2));
     }
 
 
-    void testMethod(TTT ttt) {
-        ttt.test();
-        System.out.println("TTT");
+    List<String> testMethod(TTT ttt) {
+
+        ttt.test("A", "B", "C");
+        return List.of("L1", "L2", "L3");
     }
 
     @Test
     void test4() {
+
         testAbstractLambda(new ABTTT() {
             @Override
-            public void test() {
-                System.out.println("Abstract");
+            public void test(Integer x, Integer y) {
+                System.out.println(x + ", " + y);
             }
         });
+
+        ABTTT abttt = new ABTTT() {
+            @Override
+            public void test(Integer x, Integer y) {
+                System.out.println(x + y);
+            }
+        };
+
+        abttt.test(5, 5);
     }
 
     void testAbstractLambda(ABTTT abttt) {
-        abttt.test();
+
+        abttt.test(2, 5);
         System.out.println("ABTTT");
     }
 }
