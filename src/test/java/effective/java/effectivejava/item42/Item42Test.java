@@ -1,9 +1,6 @@
 package effective.java.effectivejava.item42;
 
-import effective.java.effectivejava.item20.abclass.A;
 import effective.java.effectivejava.item42.code.ABTTT;
-import effective.java.effectivejava.item42.code.Operation;
-import effective.java.effectivejava.item42.code.OperationImpl;
 import effective.java.effectivejava.item42.code.TTT;
 import org.junit.jupiter.api.Test;
 
