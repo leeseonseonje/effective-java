@@ -49,7 +49,6 @@ public class Item42Test {
         TTT ttt = (l1, l2, l3) -> System.out.println(l1 + " > " + l2 + " > " + l3);
         ttt.test(list.get(0), list.get(1), list.get(2));
 
-
     }
 
 
