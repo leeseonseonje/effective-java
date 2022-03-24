@@ -22,7 +22,19 @@ public class Item43Test {
 
         MethodRef methodRef = new MethodRef();
         MethodReferenceTest methodReferenceTest = methodRef::test;
+        MethodReferenceTest referenceTest = (x, y) -> methodRef.test(x, y);
         String test = methodReferenceTest.test("s1", "s2");
+        System.out.println(test);
+        System.out.println(referenceTest.test("L1", "L2"));
+    }
+
+    @Test
+    void test3() {
+        testMethod("x", "y", new MethodRef()::test);
+    }
+
+    private void testMethod(String s1, String s2, MethodReferenceTest methodReferenceTest) {
+        String test = methodReferenceTest.test(s1, s2);
         System.out.println(test);
     }
 }
