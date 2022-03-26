@@ -1,5 +1,6 @@
 package effective.java.effectivejava.item44.code.simpleoptional;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class SimpleOptional<T> {
@@ -7,6 +8,7 @@ public class SimpleOptional<T> {
     private T t;
 
     private SimpleOptional(T t) {
+//        this.t = Objects.requireNonNull(t); 실제
         this.t = t;
     }
 
