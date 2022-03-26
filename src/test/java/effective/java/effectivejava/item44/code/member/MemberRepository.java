@@ -1,4 +1,6 @@
-package effective.java.effectivejava.item44.code;
+package effective.java.effectivejava.item44.code.member;
+
+import effective.java.effectivejava.item44.code.member.Member;
 
 import java.util.HashMap;
 import java.util.Map;

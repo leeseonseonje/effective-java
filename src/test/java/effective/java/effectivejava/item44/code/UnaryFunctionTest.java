@@ -1,9 +1,9 @@
 package effective.java.effectivejava.item44.code;
 
-import org.assertj.core.api.Assertions;
+import effective.java.effectivejava.item44.code.member.Member;
+import effective.java.effectivejava.item44.code.member.MemberRepository;
 import org.junit.jupiter.api.Test;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
