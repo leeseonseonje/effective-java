@@ -24,6 +24,7 @@ public class SimpleOptionalTest {
         memberRepository.save(member);
         seon = memberRepository.findMember("Seon");
         nullMember = memberRepository.findMember("null");
+        System.out.println(nullMember);
         supplier = () -> new Member("nullMember", 0);
     }
 
