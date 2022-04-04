@@ -3,9 +3,14 @@ package effective.java.effectivejava.item44;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class FunctionTest {
@@ -25,11 +30,9 @@ public class FunctionTest {
     void test2() {
         Function<String, List<String>> function = this::addString;
 
-        Function<String, String> f = x -> {
-            List<String> s = List.of("S");
-            return String.valueOf(s);
-        };
-        assertThat(function.apply("s").get(0)).isEqualTo("s");
+        List<String> s = function.apply("s");
+
+//        assertThat(function.apply("s").get(0)).isEqualTo("s");
     }
 
     private List<String> addString(String s) {
