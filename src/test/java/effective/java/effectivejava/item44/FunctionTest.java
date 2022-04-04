@@ -25,6 +25,10 @@ public class FunctionTest {
     void test2() {
         Function<String, List<String>> function = this::addString;
 
+        Function<String, String> f = x -> {
+            List<String> s = List.of("S");
+            return String.valueOf(s);
+        };
         assertThat(function.apply("s").get(0)).isEqualTo("s");
     }
 
