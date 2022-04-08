@@ -37,7 +37,7 @@ public class Item47Test {
                 new Member("SEON", 25));
 
         Map<String, Integer> map = members.stream()
-                .collect(toMap(Member::getUsername, Member::getAge, BinaryOperator.maxBy(comparing(e -> e))));
+                .collect(toMap(Member::getUsername, Member::getAge, BinaryOperator.minBy(comparing(e -> e))));
 
         map.keySet().forEach(e -> System.out.println(e + " : " + map.get(e)));
 
