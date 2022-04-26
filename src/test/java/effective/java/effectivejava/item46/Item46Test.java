@@ -1,25 +1,21 @@
-package effective.java.effectivejava.item47;
+package effective.java.effectivejava.item46;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
 
-public class Item47Test {
+public class Item46Test {
 
     @Test
     void test() {
         List<String> list = List.of("1", "2", "3");
 
-        Map<String, List<String>> collect = list.stream().filter(e -> e.equals("A") || e.equals("B"))
+        Map<String, List<String>> collect = list.stream().filter(e -> e.equals("1") || e.equals("2"))
                 .collect(groupingBy(e -> e));
 
         collect.keySet().forEach(m -> System.out.println(m + ": " + collect.get(m)));
