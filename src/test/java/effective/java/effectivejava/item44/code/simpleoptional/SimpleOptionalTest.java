@@ -2,10 +2,10 @@ package effective.java.effectivejava.item44.code.simpleoptional;
 
 import effective.java.effectivejava.item44.code.member.Member;
 import effective.java.effectivejava.item44.code.member.MemberRepository;
+import effective.java.effectivejava.item44.code.member.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.*;
@@ -16,7 +16,7 @@ public class SimpleOptionalTest {
     private Member member;
     private Member seon;
     private Member nullMember;
-    private Supplier<Member> supplier;
+    private Supplier<User> supplier;
 
     @BeforeEach
     void init() {
@@ -24,8 +24,7 @@ public class SimpleOptionalTest {
         memberRepository.save(member);
         seon = memberRepository.findMember("Seon");
         nullMember = memberRepository.findMember("null");
-        System.out.println(nullMember);
-        supplier = () -> new Member("nullMember", 0);
+        supplier = () -> new User("nullMember", 0);
     }
 
     @Test
@@ -34,10 +33,15 @@ public class SimpleOptionalTest {
         SimpleOptional<Member> seonOptional = SimpleOptional.of(seon);
         Member seonResult = seonOptional.orElseGet(supplier);
 
-        SimpleOptional<Member> nullMemberOptional = SimpleOptional.of(nullMember);
-        Member nullMemberResult = nullMemberOptional.orElseGet(supplier);
+        SimpleOptional<Member> memberSimpleOptional = SimpleOptional.ofNullable(nullMember);
+        Member member = memberSimpleOptional.orElseGet(supplier);
 
+        Member 에러 = memberSimpleOptional.orElseThrow(() -> new IllegalStateException("에러"));
         assertThat(seonResult.getUsername()).isEqualTo("Seon");
-        assertThat(nullMemberResult.getUsername()).isEqualTo("nullMember");
+        assertThat(member.getUsername()).isEqualTo("nullMember");
+
+
+        seonOptional.ifPresent(m -> m.setUsername("seonJe"));
+        assertThat(seonResult.getUsername()).isEqualTo("seonJe");
     }
 }
